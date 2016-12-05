@@ -8,6 +8,8 @@ class CGGameEngine
 private:
 	CGScene* _scene;
 	bool _isKeyDown[256] = { 0, };
+	int _width;
+	int _height;
 public:
 	CGGameEngine();
 	~CGGameEngine();

@@ -8,16 +8,13 @@ CGGameEngine::~CGGameEngine(){ }
 
 //private
 void CGGameEngine::display() {
-	this->_scene->Render();
+	this->_scene->Render(this->_width, this->_height);
 }
 
 void CGGameEngine::reshape(int width, int height) {
-	float ratio = width / (float)height;
+	this->_width = width; this->_height = height;
 
 	glViewport(0, 0, width, height);
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluPerspective(45, ratio, 1, 100);
 }
 
 void CGGameEngine::update() {
@@ -34,12 +31,6 @@ void CGGameEngine::keyUp(unsigned char key, int x, int y) {
 }
 
 void CGGameEngine::initGame() {
-	glClearColor(0, 0, 0, 0);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glColor3f(+1.0, +1.0, +1.0);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_DEPTH_TEST);
-
 	this->_scene = new CGScene();
 	this->_scene->Initialize();
 }

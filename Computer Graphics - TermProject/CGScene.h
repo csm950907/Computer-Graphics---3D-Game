@@ -8,7 +8,7 @@ public:
 public:
 	void Initialize();
 	void Release();
-	void Render();
+	void Render(int width, int height);
 	void Update();
 };
 
