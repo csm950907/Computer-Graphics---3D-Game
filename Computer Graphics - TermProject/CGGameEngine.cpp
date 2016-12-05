@@ -19,6 +19,7 @@ void reshape(int width, int height) {
 
 void update() {
 	CGGameEngine::GetInstance()->Update();
+	glutPostRedisplay();
 }
 
 void keyDown(unsigned char key, int x, int y) {

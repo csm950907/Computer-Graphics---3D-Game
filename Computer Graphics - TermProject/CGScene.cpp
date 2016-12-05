@@ -1,11 +1,9 @@
 #include "CGScene.h"
 #include <gl/glut.h>
 
-
 CGScene::CGScene()
 {
 }
-
 
 CGScene::~CGScene()
 {
@@ -14,7 +12,6 @@ CGScene::~CGScene()
 void CGScene::Initialize() {
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glColor3f(+1.0, +1.0, +1.0);
 	glEnable(GL_DEPTH_TEST);
 }
 
@@ -47,6 +44,7 @@ void CGScene::Render(int width, int height) {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
+	glFlush();
 }
 
 void CGScene::Update() {
