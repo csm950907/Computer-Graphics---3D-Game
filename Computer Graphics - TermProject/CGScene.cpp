@@ -15,7 +15,7 @@ void CGScene::Initialize() {
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glColor3f(+1.0, +1.0, +1.0);
-	glEnable(GL_LIGHTING);
+	glEnable(GL_DEPTH_TEST);
 }
 
 void CGScene::Release() {
@@ -23,6 +23,8 @@ void CGScene::Release() {
 }
 
 void CGScene::Render(int width, int height) {
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 	float ratio = width / (float)height;
 
 	//3D Object Render
