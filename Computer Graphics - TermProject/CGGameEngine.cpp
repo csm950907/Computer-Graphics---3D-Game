@@ -1,5 +1,6 @@
 #include "CGGameEngine.h"
 #include "CGScene.h"
+
 CGGameEngine* CGGameEngine::_instance = nullptr;
 
 //constructor
@@ -19,7 +20,6 @@ void reshape(int width, int height) {
 
 void update() {
 	CGGameEngine::GetInstance()->Update();
-	glutPostRedisplay();
 }
 
 void keyDown(unsigned char key, int x, int y) {
@@ -68,7 +68,14 @@ void CGGameEngine::Reshape(int width, int height) {
 }
 
 void CGGameEngine::Update() {
-	this->_scene->Update();
+	if ((timeGetTime() - this->_elapsedTime) > 16) {
+		this->_elapsedTime = timeGetTime();
+		this->_scene->Update();
+		glutPostRedisplay();
+	}
+	else {
+	
+	}
 }
 
 void CGGameEngine::KeyDown(unsigned char key, int x, int y) {

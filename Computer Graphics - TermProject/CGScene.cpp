@@ -23,27 +23,28 @@ void CGScene::Render(int width, int height) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	float ratio = width / (float)height;
-
+	
 	//3D Object Render
+	glEnable(GL_DEPTH_TEST);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(45, ratio, 1, 100);
-	glEnable(GL_DEPTH_TEST);
 
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	gluLookAt(0, 0, 10, 0, 0, 0, 0, 1, 0);
-
+	glTranslatef(3, 0, 0);
+	glutWireSphere(1, 20, 20);
+	
 	//2D Object Render
+	glDisable(GL_DEPTH_TEST);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(0, width, 0, height);
 
-	glDisable(GL_DEPTH_TEST);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-
+	glTranslatef(width / 2, height / 2, 0);
 	glFlush();
 }
 

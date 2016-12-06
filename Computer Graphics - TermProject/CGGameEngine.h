@@ -1,6 +1,6 @@
 #pragma once
 #include <gl/glut.h>
-
+#include <Windows.h>
 class CGScene;
 
 class CGGameEngine
@@ -12,6 +12,7 @@ private:
 	int _width;
 	int _height;
 
+	DWORD _elapsedTime = 0;
 	static CGGameEngine* _instance;
 
 public:
