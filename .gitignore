@@ -31,3 +31,9 @@
 # VC .db files
 *.VC.db
 *.VC.VC.opendb
+
+# Debug Files
+*.log
+*.idb
+*.pdb
+*.ilk
