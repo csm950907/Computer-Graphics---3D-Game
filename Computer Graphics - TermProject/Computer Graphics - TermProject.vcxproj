@@ -148,12 +148,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CGMath.cpp" />
     <ClCompile Include="CGScene.cpp" />
     <ClCompile Include="CGGameEngine.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CGGameEngine.h" />
+    <ClInclude Include="CGMath.h" />
     <ClInclude Include="CGScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

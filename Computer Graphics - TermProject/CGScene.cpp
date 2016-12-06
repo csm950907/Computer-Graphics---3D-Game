@@ -1,4 +1,5 @@
 #include "CGScene.h"
+#include "CGGameEngine.h"
 #include <gl/glut.h>
 
 CGScene::CGScene()
@@ -13,6 +14,11 @@ void CGScene::Initialize() {
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
+	
+	m_engineInstance = CGGameEngine::GetInstance();
+
+	m_cameraPos = new Vector3(0, 0, 10);
+	m_centerPos = new Vector3(0, 0, 0);
 }
 
 void CGScene::Release() {
@@ -32,10 +38,10 @@ void CGScene::Render(int width, int height) {
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	gluLookAt(0, 0, 10, 0, 0, 0, 0, 1, 0);
+	gluLookAt(m_cameraPos->x, m_cameraPos->y, m_cameraPos->z, m_centerPos->x, m_centerPos->y, m_centerPos->z, 0, 1, 0);
 	glTranslatef(3, 0, 0);
-	glutWireSphere(1, 20, 20);
-	
+	glutWireSphere(1, 30, 30);
+
 	//2D Object Render
 	glDisable(GL_DEPTH_TEST);
 	glMatrixMode(GL_PROJECTION);
@@ -44,7 +50,8 @@ void CGScene::Render(int width, int height) {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	glTranslatef(width / 2, height / 2, 0);
-	glutSolidCube(30);
+	glTranslatef(0, 0, 0);
+	glutWireSphere(50, 30, 30);
 	glFlush();
 }
 

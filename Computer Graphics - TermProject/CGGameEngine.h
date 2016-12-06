@@ -9,6 +9,7 @@ class CGGameEngine
 private:
 	CGScene* _scene;
 	bool _isKeyDown[256] = { 0, };
+	bool _isMouseDown[3] = { 0, };
 	int _width;
 	int _height;
 
@@ -44,5 +45,6 @@ public:
 	void Update();
 	void KeyDown(unsigned char key, int x, int y);
 	void KeyUp(unsigned char key, int x, int y);
+	bool IsKeyDown(unsigned char key);
 };
 

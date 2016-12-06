@@ -1,5 +1,6 @@
 #include "CGGameEngine.h"
 #include "CGScene.h"
+#include <stdio.h>
 
 CGGameEngine* CGGameEngine::_instance = nullptr;
 
@@ -30,6 +31,27 @@ void keyUp(unsigned char key, int x, int y) {
 	CGGameEngine::GetInstance()->KeyUp(key, x, y);
 }
 
+void mouseInput(int button, int state, int x, int y) {
+	if (button == GLUT_LEFT_BUTTON) {
+		if (state == GLUT_DOWN) {  }
+		else if(state == GLUT_UP){	}
+		else {	}
+	}
+	else if (button == GLUT_RIGHT_BUTTON) {
+		if (state == GLUT_DOWN) {	}
+		else if (state == GLUT_UP) {	}
+		else {  }
+	}
+	else if(button == GLUT_MIDDLE_BUTTON){
+		if (state == GLUT_DOWN) {	}
+		else if (state == GLUT_UP) {	}
+		else {  }
+	}
+	else {
+		printf("Error : Invalid mouse button\n");
+	}
+}
+
 void CGGameEngine::initGame() {
 	this->_scene = new CGScene();
 	this->_scene->Initialize();
@@ -50,6 +72,7 @@ void CGGameEngine::Run() {
 	glutIdleFunc(update);
 	glutKeyboardFunc(keyDown);
 	glutKeyboardUpFunc(keyUp);
+	glutMouseFunc(mouseInput);
 	glutMainLoop();
 }
 
@@ -84,4 +107,8 @@ void CGGameEngine::KeyDown(unsigned char key, int x, int y) {
 
 void CGGameEngine::KeyUp(unsigned char key, int x, int y) {
 	this->_isKeyDown[key] = false;
+}
+
+bool CGGameEngine::IsKeyDown(unsigned char key) {
+	return this->_isKeyDown[key];
 }

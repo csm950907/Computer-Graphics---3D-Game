@@ -33,12 +33,18 @@
     <ClCompile Include="CGScene.cpp">
       <Filter>소스 파일\GameEngine\Source</Filter>
     </ClCompile>
+    <ClCompile Include="CGMath.cpp">
+      <Filter>소스 파일\GameEngine\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CGGameEngine.h">
       <Filter>소스 파일\GameEngine\Header</Filter>
     </ClInclude>
     <ClInclude Include="CGScene.h">
+      <Filter>소스 파일\GameEngine\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CGMath.h">
       <Filter>소스 파일\GameEngine\Header</Filter>
     </ClInclude>
   </ItemGroup>
