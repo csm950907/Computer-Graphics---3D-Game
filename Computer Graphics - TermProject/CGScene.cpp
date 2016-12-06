@@ -44,7 +44,6 @@ void CGScene::Render(int width, int height) {
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	glTranslatef(width / 2, height / 2, 0);
 	glFlush();
 }
 

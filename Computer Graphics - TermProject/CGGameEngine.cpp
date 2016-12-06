@@ -63,7 +63,7 @@ void CGGameEngine::Display() {
 
 void CGGameEngine::Reshape(int width, int height) {
 	this->_width = width; this->_height = height;
-
+	
 	glViewport(0, 0, width, height);
 }
 
