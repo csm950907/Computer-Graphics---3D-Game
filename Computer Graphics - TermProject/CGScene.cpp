@@ -40,10 +40,11 @@ void CGScene::Render(int width, int height) {
 	glDisable(GL_DEPTH_TEST);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluOrtho2D(0, width, 0, height);
-	glutWireCube(30);
+	glOrtho(0, width, 0, height, -1000, 1000);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
+	glTranslatef(width / 2, height / 2, 0);
+	glutSolidCube(30);
 	glFlush();
 }
 
