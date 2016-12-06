@@ -41,6 +41,7 @@ void CGScene::Render(int width, int height) {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(0, width, 0, height);
+	glTranslatef(30, 30, 0);
 	glutWireCube(30);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
