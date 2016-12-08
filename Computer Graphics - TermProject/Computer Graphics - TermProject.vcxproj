@@ -151,6 +151,7 @@
     <ClCompile Include="CGMath.cpp" />
     <ClCompile Include="CGScene.cpp" />
     <ClCompile Include="CGGameEngine.cpp" />
+    <ClCompile Include="CGSolarSystem.cpp" />
     <ClCompile Include="CGSystem.cpp" />
     <ClCompile Include="CGSystemManager.cpp" />
     <ClCompile Include="main.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="CGGameEngine.h" />
     <ClInclude Include="CGMath.h" />
     <ClInclude Include="CGScene.h" />
+    <ClInclude Include="CGSolarSystem.h" />
     <ClInclude Include="CGSystem.h" />
     <ClInclude Include="CGSystemManager.h" />
   </ItemGroup>

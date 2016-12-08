@@ -1,5 +1,6 @@
 #include "CGScene.h"
 #include "CGGameEngine.h"
+#include "CGSystemManager.h"
 #include <gl/glut.h>
 
 CGScene::CGScene()
@@ -8,6 +9,7 @@ CGScene::CGScene()
 
 CGScene::~CGScene()
 {
+	this->Release();
 }
 
 void CGScene::Initialize() {
@@ -19,10 +21,13 @@ void CGScene::Initialize() {
 
 	m_cameraPos = new Vector3(0, 0, 10);
 	m_centerPos = new Vector3(0, 0, 0);
+	m_system = new CGSystemManager();
 }
 
 void CGScene::Release() {
-
+	delete m_cameraPos;
+	delete m_centerPos;
+	delete m_system;
 }
 
 void CGScene::Render(int width, int height) {
@@ -40,7 +45,7 @@ void CGScene::Render(int width, int height) {
 	glLoadIdentity();
 	gluLookAt(m_cameraPos->x, m_cameraPos->y, m_cameraPos->z, m_centerPos->x, m_centerPos->y, m_centerPos->z, 0, 1, 0);
 	glTranslatef(3, 0, 0);
-	glutWireSphere(1, 30, 30);
+	glutWireCube(3);
 
 	//2D Object Render
 	glDisable(GL_DEPTH_TEST);
@@ -51,7 +56,7 @@ void CGScene::Render(int width, int height) {
 	glLoadIdentity();
 	glTranslatef(width / 2, height / 2, 0);
 	glTranslatef(0, 0, 0);
-	glutWireSphere(50, 30, 30);
+	glutWireCube(30);
 	glFlush();
 }
 

@@ -2,7 +2,7 @@
 #include "CGScene.h"
 #include <stdio.h>
 
-CGGameEngine* CGGameEngine::_instance = nullptr;
+CGGameEngine* CGGameEngine::m_instance = nullptr;
 
 //constructor
 CGGameEngine::CGGameEngine(){ }

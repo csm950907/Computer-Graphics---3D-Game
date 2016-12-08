@@ -22,6 +22,15 @@
     <Filter Include="소스 파일\GameEngine\Source">
       <UniqueIdentifier>{b61d41e5-75c5-4f1e-9bb9-5e5fb8c494a9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\GameSource">
+      <UniqueIdentifier>{80f94ca9-2375-4ef9-a44a-054610ee4d20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GameSource\Header">
+      <UniqueIdentifier>{2a1b8a1b-0c68-4414-8d3a-ca90d7d5b80f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GameSource\Source">
+      <UniqueIdentifier>{eabcad50-573b-44cf-956c-7024434378f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -37,10 +46,13 @@
       <Filter>소스 파일\GameEngine\Source</Filter>
     </ClCompile>
     <ClCompile Include="CGSystem.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\GameSource\Source</Filter>
     </ClCompile>
     <ClCompile Include="CGSystemManager.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\GameSource\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CGSolarSystem.cpp">
+      <Filter>소스 파일\GameSource\Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -54,10 +66,13 @@
       <Filter>소스 파일\GameEngine\Header</Filter>
     </ClInclude>
     <ClInclude Include="CGSystem.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>소스 파일\GameSource\Header</Filter>
     </ClInclude>
     <ClInclude Include="CGSystemManager.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>소스 파일\GameSource\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CGSolarSystem.h">
+      <Filter>소스 파일\GameSource\Header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

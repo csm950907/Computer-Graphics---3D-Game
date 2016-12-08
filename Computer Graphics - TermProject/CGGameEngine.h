@@ -14,21 +14,21 @@ private:
 	int _height;
 
 	DWORD _elapsedTime = 0;
-	static CGGameEngine* _instance;
+	static CGGameEngine* m_instance;
 
 public:
 	CGGameEngine();
 	~CGGameEngine();
 
 	static CGGameEngine* GetInstance() {
-		if (_instance == nullptr) _instance = new CGGameEngine();
-		return _instance;
+		if (m_instance == nullptr) m_instance = new CGGameEngine();
+		return m_instance;
 	}
 
 	static void DestroyInstance() {
-		if (_instance) {
-			delete _instance;
-			_instance = nullptr;
+		if (m_instance) {
+			delete m_instance;
+			m_instance = nullptr;
 		}
 	}
 
